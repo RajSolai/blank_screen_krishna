@@ -1,3 +1,4 @@
+import 'package:blank_screen_krishna_example/homescreen.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:blank_screen_krishna/blank_screen.dart';
@@ -50,12 +51,11 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: const BlankScreen(),
-      ),
+      initialRoute: "/",
+      routes: {
+        "/": (context) => const HomeScreen(), //root route
+        "/blank": (context) => const BlankScreen()
+      },
     );
   }
 }
